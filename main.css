@@ -1,0 +1,276 @@
+/* 全体のスタイル設定 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* モダンなフォント */
+    line-height: 1.8; /* ゆったりとした行間 */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* 鮮やかなグラデーション背景 */
+    color: #f0f0f0; /* 明るい文字色 */
+    overflow-x: hidden; /* 横スクロールバーを出さない */
+}
+
+/* スクロールバーのスタイル（モダンなブラウザ向け） */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #555;
+}
+::-webkit-scrollbar-thumb {
+    background: #ffcc00; /* 目立つ色 */
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #e6b800;
+}
+
+
+/* ヘッダーのスタイル */
+header {
+    background: linear-gradient(45deg, #ff6b6b, #ffa500); /* 暖色系のグラデーション */
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* より強い影 */
+    position: relative;
+    z-index: 100;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5rem; /* 大きなタイトル */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* 強い文字の影 */
+    letter-spacing: 2px; /* 文字間隔 */
+    animation: bounceIn 1s ease-out forwards; /* 登場アニメーション */
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+/* ナビゲーションのスタイル */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 25px; /* 広めの間隔 */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    border-radius: 25px; /* 丸いボタン風 */
+    background-color: rgba(255, 255, 255, 0.2); /* 半透明の背景 */
+    transition: all 0.4s ease; /* ホバー時のアニメーション */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px) scale(1.05); /* 上に少し移動し、拡大 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    color: #ffe680; /* ホバー時の色 */
+}
+
+/* メインコンテンツのスタイル */
+main {
+    padding: 30px;
+    max-width: 1000px; /* 少し広めの最大幅 */
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.15); /* 半透明の白い背景 */
+    backdrop-filter: blur(10px); /* 背景のぼかし効果 (Frosted Glass Effect) */
+    border-radius: 20px; /* 大きく角を丸くする */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* 強い影 */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 薄い枠線 */
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* セクション内の背景も半透明 */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2); /* 内側の影 */
+    position: relative;
+    overflow: hidden; /* 子要素がはみ出さないように */
+}
+
+section::before { /* 装飾用の疑似要素 */
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    transform: rotate(45deg);
+    animation: rotateElement 10s linear infinite;
+}
+
+@keyframes rotateElement {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+h2 {
+    color: #ffe600; /* 鮮やかな黄色 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #ffcc00; /* 太い下線 */
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    text-align: center;
+    position: relative;
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 画像のスタイル */
+img {
+    max-width: 90%; /* 少し小さめに */
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border-radius: 15px; /* より丸く */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6); /* 強い影 */
+    transition: transform 0.5s ease; /* ホバー時のアニメーション */
+    border: 4px solid #ffcc00; /* 鮮やかな枠線 */
+}
+
+img:hover {
+    transform: scale(1.05) rotate(2deg); /* ホバーで少し拡大し回転 */
+}
+
+/* リンクのスタイル（テキスト内リンク） */
+a {
+    color: #ffcc00; /* 鮮やかな黄色 */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #ffcc00;
+}
+
+/* リストのスタイル */
+ul, ol {
+    margin-left: 30px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    list-style-type: '👉 '; /* カスタムリストマーカー */
+}
+
+ol {
+    list-style-type: '✨ '; /* カスタムリストマーカー */
+}
+
+ul li, ol li {
+    margin-bottom: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+ul li:hover, ol li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* フッターのスタイル */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(to left, #6a11cb 0%, #2575fc 100%); /* ヘッダーと逆方向のグラデーション */
+    color: #eee;
+    margin-top: 40px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.4);
+    font-size: 0.9rem;
+}
+
+/* レスポンシブデザインの調整 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 20px;
+        margin: 20px;
+        border-radius: 15px;
+    }
+
+    section {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    img {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 15px;
+        margin: 15px;
+        border-radius: 10px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+
+    ul, ol {
+        margin-left: 15px;
+        font-size: 1rem;
+    }
+}
